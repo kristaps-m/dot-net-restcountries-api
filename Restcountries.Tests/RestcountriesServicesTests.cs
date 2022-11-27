@@ -147,7 +147,7 @@ namespace Restcountries.Tests
         }
 
         [Fact]
-        public void ReturnOneCountryWithOutName_TestFilter_ShouldReturnOneCountryByName()
+        public void ReturnOneCountryWithOutName_TestFilter_ShouldReturnOneCountryWithOutItsName()
         {
             // Arrange
             var expectedResult = new CountryExceptName
@@ -164,6 +164,26 @@ namespace Restcountries.Tests
             var resultJsonObject = JsonSerializer.Serialize(result);
             // Assert
             Assert.Equal(expectedJsonObject, resultJsonObject);
+        }
+
+        [Fact]
+        public void ReturnOneCountryWithOutName_TestFilter_ShouldReturnOneNullIfCountryDoesNotExist()
+        {
+            // Arrange
+            var expectedResultIfSearchedCorrectly = new CountryExceptName
+            {
+                Area = 1000,
+                Population = 80000,
+                TopLevelDomain = new List<string> { ".de" },
+                Capital = new List<string> { "Berlin" },
+                CommonNativeName = "Deutschland"
+            };
+            // Act
+            var resultNotCorrectName = RestCountriesFilter.ReturnOneCountryWithOutName(_countries, "Garmani");
+            var resultCorrect = RestCountriesFilter.ReturnOneCountryWithOutName(_countries, "Germany");
+            // Assert
+            Assert.Null(resultNotCorrectName);
+            Assert.NotNull(resultCorrect);
         }
     }
 }
