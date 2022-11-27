@@ -37,13 +37,13 @@ namespace dot_net_restcountries_api.Filters
             var countryNoName = new CountryExceptName();
             foreach (var c in countries)
             {
-                if (name.ToLower().Trim() == c?.Name?.common?.ToLower().Trim())
+                if (name.ToLower().Trim() == c?.Name?.Common?.ToLower().Trim())
                 {
                     countryNoName.Area = c.Area;
                     countryNoName.TopLevelDomain = c.TopLevelDomain;
                     countryNoName.Population = c.Population;
                     countryNoName.Capital = c.Capital;
-                    countryNoName.CommonNativeName = c.Name?.nativeName?.ElementAt(0).Value.Common;
+                    countryNoName.CommonNativeName = c.Name?.NativeName?.ElementAt(0).Value.Common;
                 }
             }
 

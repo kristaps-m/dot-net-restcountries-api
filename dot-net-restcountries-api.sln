@@ -5,11 +5,13 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dot-net-restcountries-api", "dot-net-restcountries-api\dot-net-restcountries-api.csproj", "{B5E88E62-8F35-452E-9A9B-B5B3CCC9B512}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restcountries.Data", "Restcountries.Data\Restcountries.Data.csproj", "{F8699985-B83F-4420-9618-2283C4CB0163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Data", "Restcountries.Data\Restcountries.Data.csproj", "{F8699985-B83F-4420-9618-2283C4CB0163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restcountries.Classes", "Restcountries.Classes\Restcountries.Classes.csproj", "{0D5D4B9B-7F5F-4C83-8C2E-7D2495486DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Classes", "Restcountries.Classes\Restcountries.Classes.csproj", "{0D5D4B9B-7F5F-4C83-8C2E-7D2495486DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restcountries.Services", "Restcountries.Services\Restcountries.Services.csproj", "{87E99D59-9841-41A8-9CE0-CEF3AC5BCD88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Services", "Restcountries.Services\Restcountries.Services.csproj", "{87E99D59-9841-41A8-9CE0-CEF3AC5BCD88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restcountries.Tests", "Restcountries.Tests\Restcountries.Tests.csproj", "{B80D6FF8-6099-4EF3-90C6-15C325D2339C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{87E99D59-9841-41A8-9CE0-CEF3AC5BCD88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87E99D59-9841-41A8-9CE0-CEF3AC5BCD88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87E99D59-9841-41A8-9CE0-CEF3AC5BCD88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B80D6FF8-6099-4EF3-90C6-15C325D2339C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80D6FF8-6099-4EF3-90C6-15C325D2339C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80D6FF8-6099-4EF3-90C6-15C325D2339C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80D6FF8-6099-4EF3-90C6-15C325D2339C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
