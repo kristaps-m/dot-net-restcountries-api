@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dot-net-restcountries-api", "dot-net-restcountries-api\dot-net-restcountries-api.csproj", "{B5E88E62-8F35-452E-9A9B-B5B3CCC9B512}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Integration", "Restcountries.Data\Restcountries.Integration.csproj", "{F8699985-B83F-4420-9618-2283C4CB0163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Integration", "Restcountries.Integration\Restcountries.Integration.csproj", "{F8699985-B83F-4420-9618-2283C4CB0163}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Classes", "Restcountries.Classes\Restcountries.Classes.csproj", "{0D5D4B9B-7F5F-4C83-8C2E-7D2495486DF9}"
 EndProject
