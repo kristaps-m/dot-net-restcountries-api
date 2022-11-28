@@ -8,7 +8,7 @@ namespace dot_net_restcountries_api.Data
         [Get("/v3.1/region/europe")]
         Task<IEnumerable<Country>> GetAllCountriesInEurope();
 
-        // End point to search all countries !
+        // End point to search all countries by name!
         [Get("/v3.1/name/{name}")]
         Task<IEnumerable<Country>> GetCountryByName(string name);
     }

@@ -147,6 +147,68 @@ namespace Restcountries.Tests
         }
 
         [Fact]
+        public void FilterEuropeanUnionCountriesByCapitalCity_TestFilter_ShouldReturnListOfEUCountries()
+        {
+            // Arrange
+            var expectedResult = new List<Country>
+            {
+                new Country
+                {
+                    Name = new TheName{Official = "Federal Republic of Germany", Common = "Germany",
+                    NativeName = new Dictionary<string, NativeNameObject>() { {"deu", new NativeNameObject{ Official = "Bundesrepublik Deutschland",
+                    Common = "Deutschland"} } } },
+                    Area = 1000,
+                    Population = 80000,
+                    TopLevelDomain = new List<string> { ".de" },
+                    Capital = new List<string> {"Berlin"},
+                },
+                new Country
+                {
+                    Name = new TheName{Official = "French Republic", Common = "France"},
+                    Area = 1000,
+                    Population = 60000,
+                    TopLevelDomain = new List<string> { ".fr" },
+                    Capital = new List<string> {"Paris"},
+                },
+            };
+            var countriesOneNotEU = new List<Country>
+            {
+                new Country
+                {
+                    Name = new TheName{Official = "Federal Republic of Germany", Common = "Germany",
+                    NativeName = new Dictionary<string, NativeNameObject>() { {"deu", new NativeNameObject{ Official = "Bundesrepublik Deutschland",
+                    Common = "Deutschland"} } } },
+                    Area = 1000,
+                    Population = 80000,
+                    TopLevelDomain = new List<string> { ".de" },
+                    Capital = new List<string> {"Berlin"},
+                },
+                new Country
+                {
+                    Name = new TheName{Official = "French Republic", Common = "France"},
+                    Area = 1000,
+                    Population = 60000,
+                    TopLevelDomain = new List<string> { ".fr" },
+                    Capital = new List<string> {"Paris"},
+                },
+                new Country
+                {
+                    Name = new TheName{Official = "United States Of America", Common = "America"},
+                    Area = 10000,
+                    Population = 600000,
+                    TopLevelDomain = new List<string> { ".com" },
+                    Capital = new List<string> {"Vasington"},
+                },
+            };
+            // Act
+            var result = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(countriesOneNotEU);
+            var expectedJsonObject = JsonSerializer.Serialize(expectedResult);
+            var resultJsonObject = JsonSerializer.Serialize(result);
+            // Assert
+            Assert.Equal(expectedJsonObject, resultJsonObject);
+        }
+
+        [Fact]
         public void ReturnOneCountryWithOutName_TestFilter_ShouldReturnOneCountryWithOutItsName()
         {
             // Arrange

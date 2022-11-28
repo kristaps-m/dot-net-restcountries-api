@@ -22,7 +22,7 @@ namespace dot_net_restcountries_api.Filters
             {
                 if (c.Capital != null)
                 {
-                    if (Capitals.EuropeanUnionCapitals.Contains(c.Capital[0]))
+                    if (CountriesCapitals.EuropeanUnionCapitals.Contains(c.Capital[0]))
                     {
                         europeanUnionCountries.Add(c);
                     }

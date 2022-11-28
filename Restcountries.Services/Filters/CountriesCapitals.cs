@@ -1,6 +1,6 @@
 ﻿namespace dot_net_restcountries_api.Filters
 {
-    public static class Capitals
+    public static class CountriesCapitals
     {
         public static List<string> EuropeanUnionCapitals = new List<string>()
         { "Mariehamn", "Vienna", "Brussels", "Sofia", "Zagreb", "Nicosia", "Prague",

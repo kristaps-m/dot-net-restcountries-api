@@ -16,16 +16,6 @@ namespace dot_net_restcountries_api.Controllers
         }
 
         [HttpGet]
-        [Route("all")]
-        public async Task<IActionResult> GetAllCountriesInEurope()
-        {
-            var allCountriesInEurope = await _countries.GetAllCountriesInEurope();
-            var allEUC = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(allCountriesInEurope);
-            
-            return Ok(allEUC);
-        }
-
-        [HttpGet]
         [Route("europe-Population/top10")]
         public async Task<IActionResult> GetTopTenByPopulationInEurope()
         {
