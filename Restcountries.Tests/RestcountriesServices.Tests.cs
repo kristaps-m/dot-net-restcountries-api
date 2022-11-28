@@ -1,9 +1,9 @@
-using dot_net_restcountries_api.Classes;
-using dot_net_restcountries_api.Filters;
-using System.Text.Json;
-using static dot_net_restcountries_api.Classes.TheName;
+using FluentAssertions;
+using Restcountries.Classes.Classes;
+using Restcountries.Services.Filters;
+using static Restcountries.Classes.Classes.TheName;
 
-namespace Restcountries.Tests
+namespace RestcountriesServices.Tests
 {
     public class RestcountriesServicesTests
     {
@@ -89,11 +89,9 @@ namespace Restcountries.Tests
 
             };
             // Act
-            var result = RestCountriesFilter.GetTopTenCountriesByPopulation(_countries);
-            var expectedJsonObject = JsonSerializer.Serialize(expectedResult);
-            var resultJsonObject = JsonSerializer.Serialize(result);
+            var countriesByPopulation = RestCountriesFilter.GetTopTenCountriesByPopulation(_countries);
             // Assert
-            Assert.Equal(expectedJsonObject, resultJsonObject);
+            expectedResult.Should().BeEquivalentTo(countriesByPopulation);
         }
 
         [Fact]
@@ -139,11 +137,9 @@ namespace Restcountries.Tests
 
             };
             // Act
-            var result = RestCountriesFilter.GetTopTenCountriesByPopulationDensity(_countries);
-            var expectedJsonObject = JsonSerializer.Serialize(expectedResult);
-            var resultJsonObject = JsonSerializer.Serialize(result);
+            var countriesByPopulationDensity = RestCountriesFilter.GetTopTenCountriesByPopulationDensity(_countries);
             // Assert
-            Assert.Equal(expectedJsonObject, resultJsonObject);
+            expectedResult.Should().BeEquivalentTo(countriesByPopulationDensity);
         }
 
         [Fact]
@@ -201,11 +197,9 @@ namespace Restcountries.Tests
                 },
             };
             // Act
-            var result = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(countriesOneNotEU);
-            var expectedJsonObject = JsonSerializer.Serialize(expectedResult);
-            var resultJsonObject = JsonSerializer.Serialize(result);
+            var filterByCapitalCity = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(countriesOneNotEU);
             // Assert
-            Assert.Equal(expectedJsonObject, resultJsonObject);
+            filterByCapitalCity.Should().BeEquivalentTo(expectedResult);
         }
 
         [Fact]
@@ -222,24 +216,13 @@ namespace Restcountries.Tests
             };
             // Act
             var result = RestCountriesFilter.ReturnOneCountryWithOutName(_countries, "Germany");
-            var expectedJsonObject = JsonSerializer.Serialize(expectedResult);
-            var resultJsonObject = JsonSerializer.Serialize(result);
             // Assert
-            Assert.Equal(expectedJsonObject, resultJsonObject);
+            result.Should().BeEquivalentTo(expectedResult);
         }
 
         [Fact]
         public void ReturnOneCountryWithOutName_TestFilter_ShouldReturnOneNullIfCountryDoesNotExist()
         {
-            // Arrange
-            var expectedResultIfSearchedCorrectly = new CountryExceptName
-            {
-                Area = 1000,
-                Population = 80000,
-                TopLevelDomain = new List<string> { ".de" },
-                Capital = new List<string> { "Berlin" },
-                CommonNativeName = "Deutschland"
-            };
             // Act
             var resultNotCorrectName = RestCountriesFilter.ReturnOneCountryWithOutName(_countries, "Garmani");
             var resultCorrect = RestCountriesFilter.ReturnOneCountryWithOutName(_countries, "Germany");

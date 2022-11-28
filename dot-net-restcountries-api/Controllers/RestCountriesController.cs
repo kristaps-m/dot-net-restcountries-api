@@ -1,6 +1,6 @@
-﻿using dot_net_restcountries_api.Data;
-using dot_net_restcountries_api.Filters;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Restcountries.Integration;
+using Restcountries.Services.Filters;
 
 namespace dot_net_restcountries_api.Controllers
 {

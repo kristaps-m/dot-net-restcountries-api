@@ -1,7 +1,7 @@
-﻿using dot_net_restcountries_api.Classes;
-using Refit;
+﻿using Refit;
+using Restcountries.Classes.Classes;
 
-namespace dot_net_restcountries_api.Data
+namespace Restcountries.Integration
 {
     public interface IGetRestCountries
     {

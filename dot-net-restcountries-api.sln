@@ -5,15 +5,15 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dot-net-restcountries-api", "dot-net-restcountries-api\dot-net-restcountries-api.csproj", "{B5E88E62-8F35-452E-9A9B-B5B3CCC9B512}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Data", "Restcountries.Data\Restcountries.Data.csproj", "{F8699985-B83F-4420-9618-2283C4CB0163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Integration", "Restcountries.Data\Restcountries.Integration.csproj", "{F8699985-B83F-4420-9618-2283C4CB0163}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Classes", "Restcountries.Classes\Restcountries.Classes.csproj", "{0D5D4B9B-7F5F-4C83-8C2E-7D2495486DF9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Services", "Restcountries.Services\Restcountries.Services.csproj", "{87E99D59-9841-41A8-9CE0-CEF3AC5BCD88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restcountries.Tests", "Restcountries.Tests\Restcountries.Tests.csproj", "{B80D6FF8-6099-4EF3-90C6-15C325D2339C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestcountriesServices.Tests", "Restcountries.Tests\RestcountriesServices.Tests.csproj", "{B80D6FF8-6099-4EF3-90C6-15C325D2339C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestcountriesControllerTests", "RestcountriesControllerTests\RestcountriesControllerTests.csproj", "{AD23194A-DC23-4B0E-9EBE-1734D00FEE4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestcountriesController.Tests", "RestcountriesControllerTests\RestcountriesController.Tests.csproj", "{AD23194A-DC23-4B0E-9EBE-1734D00FEE4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

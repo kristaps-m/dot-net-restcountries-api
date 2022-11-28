@@ -1,5 +1,5 @@
-using dot_net_restcountries_api.Data;
 using Refit;
+using Restcountries.Integration;
 
 var builder = WebApplication.CreateBuilder(args);
 

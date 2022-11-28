@@ -1,10 +1,10 @@
 using dot_net_restcountries_api.Controllers;
-using dot_net_restcountries_api.Data;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Moq.AutoMock;
+using Restcountries.Integration;
 
-namespace RestcountriesControllerTests
+namespace RestcountriesController.Tests
 {
     [TestClass]
     public class RestCountriesControllerTests
@@ -12,7 +12,6 @@ namespace RestcountriesControllerTests
         private AutoMocker _mocker;
         private Mock<IGetRestCountries> _restCountriesMock;
         private RestCountriesController _controller;
-
 
         [TestInitialize]
         public void Setup()

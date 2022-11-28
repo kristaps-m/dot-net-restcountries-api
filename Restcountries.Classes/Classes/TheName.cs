@@ -1,4 +1,4 @@
-﻿namespace dot_net_restcountries_api.Classes
+﻿namespace Restcountries.Classes.Classes
 {
     public class TheName
     {

@@ -1,6 +1,6 @@
-﻿using dot_net_restcountries_api.Classes;
+﻿using Restcountries.Classes.Classes;
 
-namespace dot_net_restcountries_api.Filters
+namespace Restcountries.Services.Filters
 {
     public static class RestCountriesFilter
     {
