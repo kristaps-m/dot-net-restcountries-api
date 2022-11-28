@@ -45,6 +45,12 @@ namespace RestcountriesServices.Tests
             },
         };
 
+        private readonly List<CapitalCity> _europeanUnionCapitals = new()
+        {
+            new CapitalCity{Capital = "Berlin"}, new CapitalCity{Capital = "Paris"},new CapitalCity{Capital = "Rome"},
+            new CapitalCity{Capital = "Madrid"},new CapitalCity{Capital = "Warsaw"},new CapitalCity{Capital = "Lisbon"},
+            new CapitalCity{Capital = "Bucharest"},new CapitalCity{Capital = "Bratislava"}
+        };
         
         [Fact]
         public void GetTopTenCountriesByPopulation_TestFilter_ShouldReturnListInCorrectOrder()
@@ -197,7 +203,7 @@ namespace RestcountriesServices.Tests
                 },
             };
             // Act
-            var filterByCapitalCity = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(countriesOneNotEU);
+            var filterByCapitalCity = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(countriesOneNotEU, _europeanUnionCapitals);
             // Assert
             filterByCapitalCity.Should().BeEquivalentTo(expectedResult);
         }

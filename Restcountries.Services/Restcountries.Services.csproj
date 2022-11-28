@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Restcountries.Classes\Restcountries.Classes.csproj" />
+    <ProjectReference Include="..\Restcountries.Data\Restcountries.Integration.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
 </Project>

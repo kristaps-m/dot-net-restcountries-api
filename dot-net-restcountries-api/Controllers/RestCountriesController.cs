@@ -20,7 +20,8 @@ namespace dot_net_restcountries_api.Controllers
         public async Task<IActionResult> GetTopTenByPopulationInEurope()
         {
             var allCountriesInEurope = await _countries.GetAllCountriesInEurope();
-            var allEuropeanUnionCountries = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(allCountriesInEurope);
+            var allEUCapitalCities = await _countries.GetAllCapitalCitiesFromEU();
+            var allEuropeanUnionCountries = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(allCountriesInEurope,allEUCapitalCities);
             var topTenPopulation = RestCountriesFilter.GetTopTenCountriesByPopulation(allEuropeanUnionCountries);
 
             return Ok(topTenPopulation);
@@ -31,7 +32,8 @@ namespace dot_net_restcountries_api.Controllers
         public async Task<IActionResult> GetTopTenByPopulationDensityInEurope()
         {
             var allCountriesInEurope = await _countries.GetAllCountriesInEurope();
-            var allEuropeanUnionCountries = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(allCountriesInEurope);
+            var allEUCapitalCities = await _countries.GetAllCapitalCitiesFromEU();
+            var allEuropeanUnionCountries = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(allCountriesInEurope,allEUCapitalCities);
             var topTenPopulationDensity = RestCountriesFilter.GetTopTenCountriesByPopulationDensity(allEuropeanUnionCountries);
 
             return Ok(topTenPopulationDensity);
@@ -42,7 +44,8 @@ namespace dot_net_restcountries_api.Controllers
         public async Task<IActionResult> GetOneCountryByName(string name)
         {
             var allCountriesInEurope = await _countries.GetAllCountriesInEurope();
-            var allEuropeanUnionCountries = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(allCountriesInEurope);            
+            var allEUCapitalCities = await _countries.GetAllCapitalCitiesFromEU();
+            var allEuropeanUnionCountries = RestCountriesFilter.FilterEuropeanUnionCountriesByCapitalCity(allCountriesInEurope,allEUCapitalCities);            
             var oneCountryExceptName = RestCountriesFilter.ReturnOneCountryWithOutName(allEuropeanUnionCountries, name);
 
             if (oneCountryExceptName != null)

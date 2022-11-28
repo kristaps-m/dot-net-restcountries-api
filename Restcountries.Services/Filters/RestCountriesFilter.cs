@@ -14,15 +14,22 @@ namespace Restcountries.Services.Filters
             return countries.OrderByDescending(country => country.Population / country.Area).Take(10);
         }
 
-        public static IEnumerable<Country> FilterEuropeanUnionCountriesByCapitalCity(IEnumerable<Country> countries)
+        public static IEnumerable<Country> FilterEuropeanUnionCountriesByCapitalCity(IEnumerable<Country> countries,
+            IEnumerable<CapitalCity> capitalCities)
         {
             var europeanUnionCountries = new List<Country>();
+            var listOfCapitalCities = new List<string>();
+            
+            foreach (var capitalCity in capitalCities)
+            {
+                listOfCapitalCities.Add(capitalCity.Capital);
+            }
             
             foreach (var c in countries)
             {
                 if (c.Capital != null)
                 {
-                    if (CountriesCapitals.EuropeanUnionCapitals.Contains(c.Capital[0]))
+                    if (listOfCapitalCities.Contains(c.Capital[0]))
                     {
                         europeanUnionCountries.Add(c);
                     }
