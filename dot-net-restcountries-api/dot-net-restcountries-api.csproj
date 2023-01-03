@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Restcountries.Classes\Restcountries.Classes.csproj" />
-    <ProjectReference Include="..\Restcountries.Data\Restcountries.Integration.csproj" />
+    <ProjectReference Include="..\Restcountries.Integration\Restcountries.Integration.csproj" />
     <ProjectReference Include="..\Restcountries.Integration\Restcountries.Integration.csproj" />
     <ProjectReference Include="..\Restcountries.Services\Restcountries.Services.csproj" />
   </ItemGroup>
