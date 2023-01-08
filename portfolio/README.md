@@ -1,5 +1,1 @@
-# Hello, this is for portfolio project I have been working on
-
-## dot-net-restcountries-api
-
-## My name is Kristaps and I made this software
+I created a WebApi .NET 6 application that consumes data from 'https://restcountries.com' API v3+. The application only shows countries in European Union and gets the following information - country name, area, population, tld, and native name. You can get the top 10 countries with the biggest population, and the top 10 countries with the biggest population density. When you search for a specific country (e.g. /country/Latvia) application returns everything you have on that country in your model except the country name. The application has unit tests and a description of how to run it.

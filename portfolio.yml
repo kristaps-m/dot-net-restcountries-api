@@ -1,1 +1,1 @@
-"This is dot-net-restcountries-api I made  using RestCountries API"
+WebApi .NET 6 application that consumes data from 'https://restcountries.com' API v3+. Project only uses European Union countries, and uses on the country name, area, population, tld, native name. Uses swagger to show the endpoints
